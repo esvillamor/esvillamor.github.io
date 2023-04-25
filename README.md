@@ -1,2 +1,1 @@
-# esvillamor.github.io
-Portfolio for aspiring fullstack developer
+Aspiring fullstack developer portfolio
