@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practice: HTML Form</title>
+        <!--
+        /* style sheet for multiplication table */
+        -->
+        <style>
+          table {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-collapse: collapse;
+          }
+    
+          th, td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+          }
+    
+          th:first-child, td:first-child {
+            background-color: lightgray;
+          }
+    
+          input[type="number"] {
+            width: 75%;
+          }
+        </style>
+    </head>
+<body>
+<p>
+  <b>Table of Contents</b><br />
+  Practice: HTML Forms
+<ul>
+  <li><a href="#i1">Item 1. Registration</a></li>
+  <li><a href="#i2">Item 2. Login</a></li>
+  <li><a href="#i3">Item 3. Product Review</a></li>
+  <li><a href="#i4">Item 4. MP3 Player</a></li>
+  <li><a href="#i5">Item 5. Favorite Things</a></li>
+  <li><a href="#i6">Item 6. Grocery List</a></li>
+  <li><a href="#i7">Item 7. Multiplication window</a></li>
+  <li>Item 8. The Chat box (in a separate html file)</li>
+</ul>
+</p>
+<hr />
+<!-- Item 1. Registrtion -->
+<h2 id="i1">Register</h2>
+<form> <!-- action="n_page.php"-->
+  <label for="Firstname">First Name:</label>
+  <input type="text" id="Firstname" name="Firstname" value="Xavier"><br />
+  <label for="Lastname">Last Name:</label>
+  <input type="text" id="Lastname" name="Lastname" value="StackTrek">
+</form>
+<h2>Login Credentials</h2>
+<form> <!-- action="n_page.php"-->
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" value="XavierStackTrek"><br />
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" value="123"><br />
+  <label for="confirm">Confirm Password:</label>
+  <input type="password" id="confirm" name="confirm" value="123"><br />
+  <input type="submit" value="register">
+</form>
+<p><a href="#top">Back to Table of Contents</a></p> 
+<hr />
+<!-- Item 2. Login -->
+<h2 id="i2">Login</h2>
+<form> <!-- action="n_page.php"-->
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" required><br />
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required><br />
+  <input type="submit" value="Log In">
+</form> 
+<p><a href="#top">Back to Table of Contents</a></p> 
+<hr />
+<!-- Item 3. Product Review -->
+<h2 id="i3">Review Comment Box</h2>
+<form> <!-- action="n_page.php"-->  
+	<label for="rating">Rating:</label>
+	<input type="range" id="rating" name="rating" min="1" max="5" value="4"><br />
+  <label for="comment">Comment:</label><br />
+  <textarea name="comment" rows="5" cols="50" required>Good</textarea><br />  
+  <input type="submit" value="Submit Review">
+</form>
+<p><a href="#top">Back to Table of Contents</a></p> 
+<hr />
+<!-- Item 4. MP3 Player-->
+<h2 id="i4">MP3 Player</h2>
+<form> <!-- action="n_page.php"-->  
+  <label for="song">Song:</label>  
+	<select id="song" name="song" size="1">  
+		<option value="song1">Song 1</option>  
+		<option value="song2">Song 2</option>  
+		<option value="song3" selected>Song 3</option>  
+	</select> 
+  <br />
+	<label for="volume">Volume:</label>
+	<input type="range" id="volume" name="volume" min="10" max="80" value="54"><br />
+  <input type="submit" value="Play">
+</form>
+<p><a href="#top">Back to Table of Contents</a></p> 
+<hr />
+<!-- Item 5. Favorite Things -->
+<h1 id="i5">Favorite Things</h1>
+<h2>Books i've read</h2>
+<form> <!-- action="n_page.php"--> 
+  <ul> 
+	<li><input type="checkbox" id="book1" name="book1" value="Lord of the Rings"> 
+	  <label for="book1">Lord of the Rings</label></li>  
+	<li><input type="checkbox" id="book2" name="book2" value="To Kill a Mockingbird">  
+	  <label for="book2">To Kill a Mockingbird</label></li> 
+	<li><input type="checkbox" id="book3" name="book3" value="The Great Batsby">
+	  <label for="book3">The Great Batsby</label></li>  
+</ul>
+</form>
+<h2>Movies Ratings</h2>
+<form> <!-- action="n_page.php"-->
+  <ul>  
+	<li><label for="movie1">The Shawshank Redemption</label>
+    <input type="range" id="movie1" name="range1" min="1" max="10" value="5"></li>  
+  <li><label for="movie1">The Godfather</label>
+    <input type="range" id="movie2" name="range2" min="1" max="10" value="7"></li>
+  <li><label for="movie1">Pulp Fiction</label>
+    <input type="range" id="movie3" name="range3" min="1" max="10" value="9"></li>
+  </ul>
+</form>  
+<h2>Best Music</h2>
+<form> <!-- action="n_page.php"--> 
+  <ol> 
+	<li><input type="radio" id="music" name="music" value="The Beatles"> 
+	  <label for="music">The Beatles</label></li>  
+  <li><input type="radio" id="music" name="music" value="Bob Daylan"> 
+    <label for="music">Bob Daylan</label></li>
+  <li><input type="radio" id="music" name="music" value="Johnny Cash"> 
+    <label for="music">Johnny Cash</label></li>
+</ol>
+</form>
+<p><a href="#top">Back to Table of Contents</a></p> 
+<hr />
+<!-- Item 6. Grocery List -->
+<h1 id="i6">Grocery List</h1>
+<form> <!-- action="n_page.php"--> 
+  <h2>Items:</h2>
+  <input type="checkbox" id="milk" name="milk" value="milk"> 
+	  <label for="milk">Milk: </label>
+    <select id="milk" name="milk" size="1">  
+      <option value="BrandA">Brand A</option>  
+      <option value="BrandB">Brand B</option>  
+      <option value="BrandC">Brand C</option>
+    </select><br />  
+	<input type="checkbox" id="bread" name="bread" value="bread">  
+	  <label for="bread">Bread: </label>
+    <select id="bread" name="bread" size="1">  
+      <option value="BrandA">Brand A</option>  
+      <option value="BrandB">Brand B</option>  
+      <option value="BrandC">Brand C</option>
+    </select><br /> 
+	<input type="checkbox" id="eggs" name="eggs" value="eggs">
+	  <label for="eggs">Eggs: </label>
+    <select id="eggs" name="eggs" size="1">  
+      <option value="BrandA">Brand A</option>  
+      <option value="BrandB">Brand B</option>  
+      <option value="BrandC">Brand C</option>
+    </select><br />
+    
+    <h2>Other Items:</h2>
+    <input type="checkbox" id="butter" name="butter" value="butter"> 
+      <label for="butter">Butter: </label>
+      <select id="butter" name="butter" size="1">  
+        <option value="BrandA">Brand A</option>  
+        <option value="BrandB">Brand B</option>  
+        <option value="BrandC">Brand C</option>
+      </select><br />  
+    <input type="checkbox" id="cheese" name="cheese" value="cheese">  
+      <label for="cheese">Cheese: </label>
+      <select id="cheese" name="cheese" size="1">  
+        <option value="BrandA">Brand A</option>  
+        <option value="BrandB">Brand B</option>  
+        <option value="BrandC">Brand C</option>
+      </select><br /> 
+    <input type="checkbox" id="fruits" name="fruits" value="fruits">
+      <label for="fruits">Fruits: </label>
+      <select id="fruits" name="fruits" size="1">  
+        <option value="BrandA">Brand A</option>  
+        <option value="BrandB">Brand B</option>  
+        <option value="BrandC">Brand C</option>
+      </select><br />
+      <input type="submit" value="Submit">
+</form>
+<p><a href="#top">Back to Table of Contents</a></p> 
+<hr />
+<!-- Item 7. Multiplication window -->
+<h1 id="i7">Multiplication window</h1>
+<p>Fill in the missing numbers in the multiplication table below:</p>
+
+<form>
+  <table>
+    <tr>
+      <th></th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td><input type="text" id="answer1" name="answer1" style="width: 10px;"></td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>6</td>
+      <td><input type="text" id="answer2" name="answer2" style="width: 10px;"></td>
+   
+    </tr>
+  </table><br />
+<input type="submit" value="Submit">
+</form>
+<p><a href="#top">Back to Table of Contents</a></p> 
+<hr />
+
+<!-- In a separate html file
+<p><a href="#top">Back to Table of Contents</a></p> 
+<hr />
+Item 8. Chat box
+<h2 id="i8">Chat box</h2>
+<p><a href="#top">Back to Table of Contents</a></p> 
+<hr />
+-->
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+</body>
+</html>
+
