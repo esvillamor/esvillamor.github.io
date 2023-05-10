@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Toggle Button</title>
+</head>
+<body>
+  <button id="toggle-button">Open</button>
+  <!--
+    // https://reactgo.com/change-button-text-javascript/
+    // Eric S. Villamor
+  -->  
+  <script>
+   const btn = document.getElementById("toggle-button");
+   btn.addEventListener("click", ()=>{
+        if(btn.innerText === "Open"){
+            btn.innerText = "Close";
+        }else{
+            btn.innerText= "Open";
+        }
+   });
+  </script>
+</body>
+</html>

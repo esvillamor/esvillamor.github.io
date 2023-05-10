@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practice JavaScript</title>
+    </head>
+    <body>
+        <p>As demonstrated by Sir Jay:</p>
+        <pre>
+            &lt;select id="mySelect"&gt;&lt;/select&gt;
+            &lt;script&gt;
+                function myFunction(item) {
+                    var x = document.getElementById("mySelect");
+                    var option = document.createElement("option");
+                    option.text = item;
+                    x.add(option);
+                }
+                const options = ["Option 1", "Option 2", "Option 3"]
+                options.forEach(myFunction);
+            &lt;/script&gt;
+        </pre>
+        
+        <b>Sir Jay's result is:</b>
+        <select id="mySelect"></select>
+        <script>
+            function myFunction(item) {
+                var x = document.getElementById("mySelect");
+                var option = document.createElement("option");
+                option.text = item;
+                x.add(option);
+            }
+            const options = ["Option 1", "Option 2", "Option 3"]
+            options.forEach(myFunction);
+        </script>
+<hr />
+
+<p><b>My solution to the challenge:</b><br />by: Eric S. Villamor &#128512;
+    <form action="javascript:execute()">
+     <label for="number">Enter number of options to display:</label><br />
+     <input style="width: 90px;" type="number" id="number" name="number" value="0">
+     <input type="submit" value="EXECUTE">
+    </form><br />
+
+    <select style="width: 100px;" id="newSelect"></select>
+    <button onclick="clearOptions()">CLEAR</button>
+    <script type="text/javascript">
+        function newFunction(myItem){
+            var y = document.getElementById("newSelect");
+            var option = document.createElement("option");
+            option.text = myItem;
+            y.add(option);
+        }
+
+        function execute(){
+            clearOptions()
+            let n = document.getElementById("number").value;
+            for(let i=1; i<=n; i++){
+            var o = "Option ";
+            const myOptions = [o.concat(i)]
+            myOptions.forEach(newFunction);
+            }
+        }
+
+        function clearOptions(){
+            document.getElementById("newSelect").innerHTML="";
+            //document.getElementById("number").value=0;
+        }
+    </script>
+</p>
+    </body>
+</html>
