@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Name Display</title>
+</head>
+<body>
+    <label for="name_input">Enter your name:</label>
+    <input type="text" id="name_input" onKeyPress="name_inputKeyPress()" onKeyUp="name_inputKeyPress()">
+    <div id="name_display">Hello</div>
+  <!--
+    // I modified the eg. id "name-input" to "name_input", and the rest that used dash to undeerscore
+    // underscore instead of dash is much more acceptable in JS
+    // https://stackoverflow.com/questions/11365686/how-to-get-text-of-an-input-text-box-during-onkeypress
+    // http://jsfiddle.net/VDd6C/8/
+    // Eric S. Villamor
+  -->
+  <script>
+   //<!-- your code here -->
+   function name_inputKeyPress() {
+        var name_input = document.getElementById("name_input");
+        var s = name_input.value;
+        var name_display = document.getElementById("name_display");
+        name_display.innerText= "Hello "+ s;
+    }
+  </script>
+</body>
+</html>
