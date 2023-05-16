@@ -1,238 +1,236 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-* {
-  box-sizing: border-box;
-}
+  <title>Bootstrap 5 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+  <style>
+    #myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
 
-[class*="col-"] {
-  float: left;
-  padding: 15px;
+#myBtn:hover {
+  background-color: #555;
 }
-
-html {
-  font-family: "Lucida Sans", sans-serif;
-}
-
-.header {
-  background-color: #9933cc;
-  color: #ffffff;
-  padding: 15px;
-}
-
-.menu ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.menu li {
-  padding: 8px;
-  margin-bottom: 7px;
-  background-color: #33b5e5;
-  color: #ffffff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
-.menu li:hover {
-  background-color: #0099cc;
-}
-
-.aside {
-  background-color: #33b5e5;
-  padding: 15px;
-  color: #ffffff;
-  text-align: center;
-  font-size: 14px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
-.footer {
-  background-color: #0099cc;
-  color: #ffffff;
-  text-align: center;
-  font-size: 12px;
-  padding: 15px;
-}
-
-/* For mobile phones: */
-[class*="col-"] {
-  width: 100%;
-}
-
-@media only screen and (min-width: 600px) {
-  /* For tablets: */
-  .col-s-1 {width: 8.33%;}
-  .col-s-2 {width: 16.66%;}
-  .col-s-3 {width: 25%;}
-  .col-s-4 {width: 33.33%;}
-  .col-s-5 {width: 41.66%;}
-  .col-s-6 {width: 50%;}
-  .col-s-7 {width: 58.33%;}
-  .col-s-8 {width: 66.66%;}
-  .col-s-9 {width: 75%;}
-  .col-s-10 {width: 83.33%;}
-  .col-s-11 {width: 91.66%;}
-  .col-s-12 {width: 100%;}
-}
-@media only screen and (min-width: 768px) {
-  /* For desktop: */
-  .col-1 {width: 8.33%;}
-  .col-2 {width: 16.66%;}
-  .col-3 {width: 25%;}
-  .col-4 {width: 33.33%;}
-  .col-5 {width: 41.66%;}
-  .col-6 {width: 50%;}
-  .col-7 {width: 58.33%;}
-  .col-8 {width: 66.66%;}
-  .col-9 {width: 75%;}
-  .col-10 {width: 83.33%;}
-  .col-11 {width: 91.66%;}
-  .col-12 {width: 100%;}
-}
-p {
- text-align:justify;
-}
-a {
- text-decoration:none;
-}
-
-</style>
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+  }
+  </style>
 </head>
 <body onload="myFunction()">
 
-<div class="header">
-  <h1>StackTrek x DICT Scholarship Bootcamp</h1>
+<div class="container-fluid p-5 bg-primary text-white text-center">
+  <h1>Aspiring FullStack Developer</h1>
+  <p>StackTrek x DICT Scholarship Bootcamp</p>
 </div>
+<!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark"> -->
 
-<div class="row">
-  <div class="col-3 col-s-3 menu">
-    <ul>
-      <li><a href="#top">Personal Information<a/></li>
-      <li><a href="#progress">Progressing Project Excercises</a></li>
-      <li><a href="#social">Social Media Profiles</a></li>
-      <li><a href="https://esvillamor.github.io/project-exercises/iPortfolio/index.html">BOOTSTRAP PORTFOLIO</a></li>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">  
+ <div class="container-fluid">
+  <a class="navbar-brand" href="#">My Portfolio</a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+   </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contact">Contact</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Projects</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="https://esvillamor.github.io/index_old.html" target="_blank" title="Only a responsive webpage">Old Homepage</a></li>
+          <li><a class="dropdown-item" href="https://esvillamor.github.io/project-exercises/iPortfolio/index.html" target="_blank" title="Bootstrap Implementation">New Homepage</a></li>
+          <li><a class="dropdown-item" href="#bootcamp">Bootcamp</a></li>
+          <li><a class="dropdown-item" href="#softwares">Softwares</a></li>
+        </ul>
+      </li>  
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Socials</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="https://twitter.com/esvwebsite" target="_blank">Twitter</a></li>
+          <li><a class="dropdown-item" href="https://www.facebook.com/villamor.eric" target="_blank">Facebook</a></li>
+          <li><a class="dropdown-item" href="https://www.instagram.com/esvillamor.website/" target="_blank">Instagram</a></li>
+          <li><a class="dropdown-item" href="https://join.skype.com/invite/VCdfSKTgeKgL" target="_blank">Skype</a></li>
+          <li><a class="dropdown-item" href="https://www.linkedin.com/in/eric-villamor-314b6a94/" target="_blank">LinkedIn</a></li>
+        </ul>
+      </li>
     </ul>
   </div>
-
-  <div class="col-6 col-s-9">
-    <h1>Aspiring FullStack Developer</h1>
-    <p>
-	<img style="float: left; width:260px; height:300px;" src="https://img.freepik.com/premium-vector/full-stack-developer-working-computer-it-professional-programmer-coding-website-creation-process-computer-technology_277904-5496.jpg?w=2000" />
-	Hi! I'm Eric, Come and explore my portfolio website. 
-	In a few days, weeks or 6 months the most after completing this bootcamp,
-	I would become a FullStack Software Developer that is my aspiration.</p>
-    <p>
-    I've been in the Department of Education since 2001 at first teaching 
-	high school students Electricity and Electronics under Technology and Livelihood Education 
-	later taught Information and Communication Technology in short "computer subjects". 
-	</p>
-	<p>
-	Until K12 is implemented on 2016, the following year I transferred to Senior High School to
-	teach Visual Basic.Net and Java Computer Programming under ICT - Technical, Vocational and
-	Livelihood Track. I am not a good computer programmer the reason I'm so very eager to take
-	this bootcamp. But I can create simple computer programs just see some of my personal projects.
-	</p>
-	<p>
-	QA Software Tester at <a href="https://www.xleap.net/" target="_blank">XLeap</a> at night.
-	Been in the company for six (6) years doing manual software testing of our SaaS XLeap Software. 
-	</p>
-	<p>
-	Suspendisse potenti. Sed nec sem metus. Proin semper dapibus suscipit.
-	Mauris viverra finibus ultricies. Cras pharetra, ante nec congue iaculis,
-	eros felis dignissim ipsum, ut aliquet nunc tortor sed augue.
-	Praesent nisi odio, fringilla id auctor in, condimentum sed mauris.
-	Praesent sed erat elit. Vestibulum eget porta turpis.
-	Etiam molestie orci at nunc molestie, vestibulum accumsan magna maximus.
-    </p>
-    <h1 id="progress">Progressing Project Excercises</h1>
-    <dl>
-    <dt>HTML</dt>
-    <dd>- <a href="https://esvillamor.github.io/project-exercises/practiceHTML.html" target="_blank">Practice HTML Basic</a></dd>
-    <dd>- <a href="https://esvillamor.github.io/project-exercises/PracticeHTMLForm.html" target="_blank">Practice HTML Form</a></dd>
-    <br />
-    <dt>CSS</dt>
-    <dd>- <a href="https://esvillamor.github.io/project-exercises/CSS/sonnet.html" target="_blank">Exercise 1</a>,
-      view stylesheet <a href="https://esvillamor.github.io/project-exercises/CSS/mystyle.css" target="_blank">here</a></dd></dd>
-    <dd>- <a href="https://esvillamor.github.io/project-exercises/CSS/shakespeareSonnet.html" target="_blank">Exercise 2</a>,
-      view stylesheet <a href="https://esvillamor.github.io/project-exercises/CSS/mystyle2.css" target="_blank">here</a></dd></dd>
-    <dd>- <a href="https://esvillamor.github.io/project-exercises/CSS/css1.html" target="_blank">Exercise 3</a>,
-      implemented internal and inline css</dd>
-    <dd>- <a href="https://esvillamor.github.io/project-exercises/CSS/movies/dark.html" target="_blank">Exercise 4</a>,
-      view stylesheet <a href="https://esvillamor.github.io/project-exercises/CSS/movies/css/darkStyle.css" target="_blank">here</a></dd>
-    <br />
-    <dt>JavaScript</a></dt>
-    <dd>Coming Soon...</dd>
-	<br />  
-	<dt>And more to come...</a></dt>
-    <dd>Willing to accept the challenge...</dd>
-  </dl>
-    <h1 id="social">Social Media Profiles</h1>
-    <ul>
-	  <li><a href="https://www.facebook.com/villamor.eric" target="_blank">Facebook</a></li>
-	  <li><a href="https://www.linkedin.com/in/eric-villamor-314b6a94/" target="_blank">LinkedIn</a></li>
-	</ul>
-	<hr />
-	<p>
-	Etiam elementum quam at viverra posuere. Mauris eget elit odio. Aliquam ac arcu eu nunc sodales scelerisque a et augue. Vivamus faucibus laoreet eros sit amet faucibus. Proin mi dui, convallis sed mollis non, vestibulum vel nisi. Vivamus a porttitor tellus, id fermentum urna. Curabitur at lorem nisl. Vivamus non eleifend nisi, sit amet luctus lorem. Phasellus hendrerit congue eleifend. Etiam sed lacus ut ipsum egestas tristique. Cras vehicula ligula eget mi iaculis semper. Maecenas quam erat, facilisis ac viverra nec, fermentum sed tellus. In dictum ligula quis risus volutpat congue. Praesent vehicula vestibulum fringilla.
-	</p>
-	<p>
-    Morbi in mauris consequat, ultricies massa a, tincidunt leo. Sed vehicula consequat odio id dignissim. Nunc efficitur vestibulum nibh, ut elementum massa. Suspendisse turpis arcu, vehicula non nisi ut, sagittis molestie ante. Maecenas tempus in eros sit amet aliquam. Cras venenatis urna non posuere consectetur. Phasellus blandit id lacus vel dictum. Ut consequat faucibus orci in congue.
-	</p>
-	<p><a href="#top">Back to Top</a></p>
   </div>
+</nav>
 
-  <div class="col-3 col-s-12">
-    <div class="aside">
-	  <img title="Personal Projects" src="https://hello-triggerapp.com/wp-content/uploads/2020/10/pmpmpm-1210x423.jpg" style="width:100%;" alt="Personal Projects" />
-      <h2><a href="https://spreadsheet-app.blogspot.com/p/download.html" target="_blank">Spreadsheet App</a></h2>
-      <p>A DepEd School Forms Suite SF1, SF2, SF3, SF5A, SF5B, SF8, SF9, SF10, ECR and more 
-	  for Senior High School Class Advisers...
-	  </p>
-	  <p>
-	  This has been created using Visual Basic.Net with Excel as its database embedded and hidden within the app. 
-	  The website were created using blogger and to download the app it is hosted in google drive. 
-	  <a href="https://drive.google.com/file/d/1dDHFAP8K03rtvuHr0s-f_rpcZd758VdH/view?usp=share_link" target="_blank"><b>Click here to Download</a></b>.
-	  </p>
-	  <h2><a href="https://drive.google.com/file/d/13a7PWss9C0bZ0V1eXghb0xXTXoc0NAF5/view?usp=sharing" target="_blank">Number System Converter</a></h2>
-	  <p>
-	  Having trouble converting from Binary to Decimal to Octal to Hexadecimal?
-	  This VB.Net created app will help you solve that problem!
-	  It will not just give you the answer but as well as the solution how it has been converted!
-	  </p>
-	  <h2><a href="https://drive.google.com/file/d/1pZGUOIPeOhN0dTqmQ077ANZvohKegSxD/view?usp=sharing" target="_blank">Linear Converter</a></h2>
-	  <p>
-	  VB.Net app that will help you convert from one linear measure system to another system.
-	  Converts: English to Metric, Metric to English | English to English | Metric to Metric linear measures.
-	  It also gives you the steps how it has been converted!
-	  </p>
-      <h2><a href="https://capiznhs.blogspot.com/" target="_blank">School Website</a></h2>
-      <p>A development legacy project to Establish Global Identity and Create a link to the world for Capiz National High School.
-	  </p>
-	  <p>Similar to other projects, this has been created using blogger with embeded FB page plugin...
-	  </p>
-      <h2><a href="https://www.facebook.com/RANHSONLINE/" target="_blank">School FB Page</a></h2>
-      <p>Ramon Avanceña National High School Facebook page.
-	  Created during the peak time of the COVID-19 pandemic,
-	  providing online accessibily for most inquries</p>
+<!-- Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  </div>
+  
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://www.w3schools.com/bootstrap/la.jpg" alt="Los Angeles" class="d-block" style="width:100%">
+      <div class="carousel-caption">
+        <h3>Los Angeles</h3>
+        <p>We had such a great time in LA!</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.w3schools.com/bootstrap/chicago.jpg" alt="Chicago" class="d-block" style="width:100%">
+      <div class="carousel-caption">
+        <h3>Chicago</h3>
+        <p>Thank you, Chicago!</p>
+      </div> 
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.w3schools.com/bootstrap/ny.jpg" alt="New York" class="d-block" style="width:100%">
+      <div class="carousel-caption">
+        <h3>New York</h3>
+        <p>We love the Big Apple!</p>
+      </div>  
     </div>
   </div>
+  
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
 </div>
 
-<div class="footer">
-  <p>Resize the browser window to see how the content respond to the resizing.<br />
-  A humble Portfolio for a FullStack Software Developer Aspirant: ERIC S. VILLAMOR</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col p-3">
+      <p id="about"><br /><br /></p>
+      <hr>
+      <h3>About Me</h3>
+      <img style="float: left; width:260px; height:300px;" src="https://img.freepik.com/premium-vector/full-stack-developer-working-computer-it-professional-programmer-coding-website-creation-process-computer-technology_277904-5496.jpg?w=2000" />
+      <p>Hi! I'm Eric, Come and explore my portfolio website. 
+      In a few days, weeks or 6 months the most after completing this bootcamp,
+      I would become a FullStack Software Developer that is my aspiration.</p>
+
+      <p>I've been in the Department of Education since 2001 at first teaching 
+      high school students Electricity and Electronics under Technology and Livelihood Education 
+      later taught Information and Communication Technology in short "computer subjects".</p>
+      
+      <p>Until K12 is implemented on 2016, the following year I transferred to Senior High School to
+      teach Visual Basic.Net and Java Computer Programming under ICT - Technical, Vocational and
+      Livelihood Track. I am not a good computer programmer the reason I'm so very eager to take
+      this bootcamp. But I can create simple computer programs just see some of my personal projects.</p>
+      <p>QA Software Tester at <a href="https://www.xleap.net/" target="_blank">XLeap</a> at night.
+      Been in the company for six (6) years doing manual software testing of our SaaS XLeap Software.</p>
+    </div>
+    <div class="col p-3">
+      <p id="contact"><br /><br /></p>
+      <hr>
+      <h3>Contact</h3>
+      <form action="mailto:eric.s.villamor@gmail.com" method="post" enctype="text/plain">
+        <div class="form-group"> 
+         <label for="name">Your Name</label>
+         <input type="text" name="name" class="form-control" id="name" required>
+         <label for="name">Your Email</label>
+         <input type="email" class="form-control" name="email" id="email" required>
+        </div>
+         <label for="name">Subject</label>
+         <input type="text" class="form-control" name="subject" id="subject" required>
+         <label for="name">Message</label>
+         <textarea class="form-control" name="message" rows="5" required></textarea><br />
+        <input type="submit" value="Send">
+        <input type="reset" value="Clear">
+      </form>
+    </div>
+  </div>  
 </div>
+ 
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col p-3">
+      <p id="bootcamp"><br /><br /></p>
+      <hr>
+      <h3>Bootcamp</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      <!-- Do not remove the line breaks-->
+      <br /><br /><br /><br />
+    </div>
+    <div class="col p-3">
+      <p id="softwares"><br /><br /></p>
+      <hr>
+      <h3>Softwares</h3>        
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      <!-- Do not remove the line breaks-->
+      <br /><br /><br /><br />
+    </div>
+  </div>  
+</div>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
 <script>
+// Get the button
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
 function myFunction() {
   let text = "Click OK to see my new portfolio website with Bootstrap implementation.\n\nClick Cancel to see my old portfolio website with only css responsive design\nYou can see as well previous exercises before bootstrap.";
   if (confirm(text) == true) {
@@ -242,5 +240,8 @@ function myFunction() {
 }
 </script>
 
+<div class="footer">
+  <p>&copy; 2023 Eric S. Villamor</p>
+</div>
 </body>
 </html>
