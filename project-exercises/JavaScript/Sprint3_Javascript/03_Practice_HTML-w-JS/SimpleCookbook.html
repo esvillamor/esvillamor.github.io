@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Cookbook Application</title>
+  <style>
+    ul {
+      list-style: circle;
+    }
+  </style>
+</head>
+<body>
+  <h1>Simple Cookbook Application</h1>
+
+  <div>
+    <h2>Add Recipe</h2>
+    <label for="recipeName">Recipe Name:</label>
+    <input type="text" id="recipeName" />
+    <br />
+    <label for="ingredient">Ingredient:</label>
+    <input type="text" id="ingredient" />
+    <button onclick="addIngredient()">Add Ingredient</button>
+    <ul id="ingredientList"></ul>
+    <br />
+    <label for="instruction">Instruction:</label>
+    <input type="text" id="instruction" />
+    <button onclick="addInstruction()">Add Instruction</button>
+    <ol id="instructionList"></ol>
+    <br />
+    <button onclick="saveRecipe()">Save Recipe</button>
+  </div>
+
+  <div>
+    <h2>Recipe List</h2>
+    <ul id="recipeList"></ul>
+  </div>
+
+  <div id="recipeDetails" style="display: none;">
+    <h2>Recipe Details</h2>
+    <h3 id="recipeTitle"></h3>
+    <h4>Ingredients:</h4>
+    <ul id="recipeIngredients"></ul>
+    <h4>Instructions:</h4>
+    <ol id="recipeInstructions"></ol>
+  </div>
+
+  <script>
+    let recipes = [];
+
+    function addIngredient() {
+      const ingredientInput = document.getElementById('ingredient');
+      const ingredient = ingredientInput.value.trim();
+      if (ingredient !== '') {
+        const ingredientList = document.getElementById('ingredientList');
+        const li = document.createElement('li');
+        li.textContent = ingredient;
+        ingredientList.appendChild(li);
+        ingredientInput.value = '';
+      }
+    }
+
+    function addInstruction() {
+      const instructionInput = document.getElementById('instruction');
+      const instruction = instructionInput.value.trim();
+      if (instruction !== '') {
+        const instructionList = document.getElementById('instructionList');
+        const li = document.createElement('li');
+        li.textContent = instruction;
+        instructionList.appendChild(li);
+        instructionInput.value = '';
+      }
+    }
+
+    function saveRecipe() {
+      const recipeNameInput = document.getElementById('recipeName');
+      const recipeName = recipeNameInput.value.trim();
+      if (recipeName !== '') {
+        const ingredientListItems = document.querySelectorAll('#ingredientList li');
+        const ingredients = Array.from(ingredientListItems).map(li => li.textContent);
+        const instructionListItems = document.querySelectorAll('#instructionList li');
+        const instructions = Array.from(instructionListItems).map(li => li.textContent);
+
+        const recipe = {
+          name: recipeName,
+          ingredients: ingredients,
+          instructions: instructions
+        };
+
+        recipes.push(recipe);
+        displayRecipeList();
+        clearForm();
+      }
+    }
+
+    function displayRecipeList() {
+      const recipeList = document.getElementById('recipeList');
+      recipeList.innerHTML = '';
+
+      for (let i = 0; i < recipes.length; i++) {
+        const recipe = recipes[i];
+        const li = document.createElement('li');
+        li.textContent = recipe.name;
+        li.onclick = function() {
+          displayRecipeDetails(i);
+        };
+        recipeList.appendChild(li);
+      }
+    }
+
+    function displayRecipeDetails(index) {
+      const recipe = recipes[index];
+      const recipeTitle = document.getElementById('recipeTitle');
+      const recipeIngredients = document.getElementById('recipeIngredients');
+      const recipeInstructions = document.getElementById('recipeInstructions');
+
+      recipeTitle.textContent = recipe.name;
+      recipeIngredients.innerHTML = '';
+      recipeInstructions.innerHTML = '';
+
+      for (let i = 0; i < recipe.ingredients.length; i++) {
+        const li = document.createElement('li');
+        li.textContent = recipe.ingredients[i];
+        recipeIngredients.appendChild(li);
+      }
+
+      for (let i = 0; i < recipe.instructions.length; i++) {
+        const li = document.createElement('li');
+        li.textContent = recipe.instructions[i];
+        recipeInstructions.appendChild(li);
+      }
+
+      document.getElementById('recipeDetails').style.display = 'block';
+    }
+
+    function clearForm() {
+      document.getElementById('recipeName').value = '';
+      document.getElementById('ingredientList').innerHTML = '';
+      document.getElementById('instructionList').innerHTML = '';
+    }
+  </script>
+</body>
+</html>

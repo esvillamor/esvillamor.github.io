@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Card Masker</title>
+    <script src="cardMasking.js"></script>
+</head>
+<body>
+    <h1>Card Masker</h1>
+
+    <label for="cardNumber">Card Number:</label>
+    <input type="text" id="cardNumber"> <!-- > maxlength="16"> -->
+
+    <button onclick="maskCardNumber()">Mask</button>
+    <button onclick="unmaskCardNumber()">Unmask</button>
+
+    <h2>Masked Card Number:</h2>
+    <p id="maskedNumber"></p>
+</body>
+</html>
