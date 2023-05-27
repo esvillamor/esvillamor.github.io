@@ -42,14 +42,22 @@ class notepad {
     }
   
     enter() {
-      return this.text.join('');
+      //return this.text.join('');
+      let combinedText = "";
+      for (let i = 0; i < this.text.length; i++) {
+        if (typeof this.text[i] === 'string') {
+          combinedText += this.text[i];
+        } else if (typeof this.text[i] === 'number') {
+          combinedText += String.fromCharCode(this.text[i]);
+        }
+      }
+      return combinedText;
     }
   }
 
   function convertAsciiToText(asciiCode) {
     return String.fromCharCode(asciiCode);
   }
-
   
   const TestCase1 = new notepad();
   TestCase1.addText(convertAsciiToText(72));  
@@ -64,7 +72,6 @@ class notepad {
   TestCase1.moveRight()
   TestCase1.delete()
   console.log(TestCase1.enter());
-  //return(notepad)
 
   const TestCase2 = new notepad();
   TestCase2.delete()
